@@ -1,6 +1,6 @@
 class GaffsController < ApplicationController
   def index
-  	@gaffs = Gaff.near('London')
+  	@gaff = Gaff.all#near('London')
   end
 
   def show
