@@ -1,0 +1,16 @@
+<h2><%=@gaff.title %></h2>
+
+
+<p><%=@gaff.address %></p>
+
+<p><%=@gaff.latitude %></p><p><%=@gaff.longitude %></p>
+
+
+<div>
+	
+<%= link_to "Edit", edit_gaff_path(@gaff), class: "button" %>
+<%= link_to "Delete", gaff_path(@gaff), method: :delete,
+	class: "button", confirm: "Are you sure?" %>
+
+</div>
+

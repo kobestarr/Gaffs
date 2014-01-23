@@ -1,0 +1,2 @@
+module GaffsHelper
+end

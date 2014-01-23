@@ -1,0 +1,11 @@
+<% @gaffs.each do |gaff| %>
+	
+	<div>
+		<%= link_to gaff.title, gaff_path(gaff) %>
+
+	</div>
+
+
+<%end%>
+
+<%= link_to "Add a new Gaff", new_gaff_path %>
