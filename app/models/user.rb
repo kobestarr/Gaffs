@@ -5,9 +5,24 @@ has_many :gaffs
 
 
 # this is now built into rails 4
+	
 
 
 has_secure_password
+
+
+
+#add in paperclip
+has_attached_file :avatar, styles: {
+
+	large: "320x320",
+	medium: "140x140"
+	thumbnail: "50x50"
+}
+
+
+
+
 
 # validations
 validates :username, presence: true, uniqueness: true

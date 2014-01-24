@@ -67,7 +67,7 @@ class GaffsController < ApplicationController
   	#we need to know which parts of the gaff that can be edited and hide from the user
 
   	params.require(:gaff).permit(:title, :address, :description,
-  		:max_guests, :bedrooms, :price	
+  		:max_guests, :bedrooms, :price, :image	
 
   	 )
 
