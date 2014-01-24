@@ -1,3 +1,11 @@
+#this is stripes test secret
+Stripe.api_key = "sk_test_fSQf1bHYw6FWHgsaxXVXuhvl"
+
+#This is stripes test publishable key
+STRIPE_KEY = "pk_test_wvyB45c2ssR30d5ptsurGSyh"
+
+
+
 Gaffrenter::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -6,7 +14,7 @@ Gaffrenter::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-  # Do not eager load code on boot.
+  # Do not eager load code on boot. 
   config.eager_load = false
 
   # Show full error reports and disable caching.

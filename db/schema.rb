@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140124105120) do
+ActiveRecord::Schema.define(version: 20140124110627) do
 
   create_table "gaffs", force: true do |t|
     t.string   "title"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20140124105120) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "gaff_id"
+    t.integer  "user_id"
+    t.string   "stripe_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

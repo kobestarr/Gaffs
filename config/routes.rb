@@ -1,6 +1,21 @@
 Gaffrenter::Application.routes.draw do
  
-  get "sessions/new"
+  # get "orders/index"
+  # get "orders/show"
+  # get "orders/new"
+  # get "sessions/new"
+
+#orders are inside the gaff because we want to place an order on a room
+
+resources :gaffs do
+
+    resources :orders, only: [:new, :create]
+
+  end
+
+  #mt list of orders dont have to be on a gaff
+  resources :orders, only: [:index, :show]
+
 #this page is the urls of our websites 
 
   

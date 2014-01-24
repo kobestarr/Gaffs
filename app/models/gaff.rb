@@ -1,7 +1,8 @@
 class Gaff < ActiveRecord::Base
 
 	#associations
-	belongs_to :user	
+	belongs_to :user
+	has_many :orders	
 
 	#this is info from the ruby geocoder.org site
 	geocoded_by :address

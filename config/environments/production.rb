@@ -1,3 +1,12 @@
+#this is stripes test secret
+Stripe.api_key = "sk_live_2hDZ9k0leIcC4zQova43tz9w"
+
+#This is stripes test publishable key
+STRIPE_KEY = "pk_live_HYOtvW2acwzheudy8sNPxDYZ"
+
+
+
+
 Gaffrenter::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -27,10 +36,10 @@ Gaffrenter::Application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
-  config.assets.digest = true
+  config.assets.digest = false
 
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
@@ -40,7 +49,7 @@ Gaffrenter::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Set to :debug to see everything in the log.
   config.log_level = :info

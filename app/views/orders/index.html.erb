@@ -1,0 +1,16 @@
+<h1> Your Orders</h1>>
+
+<ul>
+	<% @orders.each do |order| %>
+
+	<li>
+		
+		<%= link_to "order_number #{order.id}", order_path(order)%>
+		<%= order.gaff.title%>
+
+	</li>
+
+	<% end %>
+
+
+</ul>

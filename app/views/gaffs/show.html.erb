@@ -1,16 +1,26 @@
 <h2><%=@gaff.title %></h2>
 
 <%= image_tag @gaff.image(:large)%>
+
 <p><%=@gaff.address %></p>
 
 <p><%=@gaff.latitude %></p><p><%=@gaff.longitude %></p>
 
+<%if current_user.present?%>
 
-<div>
-	
-<%= link_to "Edit", edit_gaff_path(@gaff), class: "button" %>
-<%= link_to "Delete", gaff_path(@gaff), method: :delete,
-	class: "button", confirm: "Are you sure?" %>
+<div class="actions">
+
+
+<%= link_to "Book Gaff", new_gaff_order_path(@gaff), class: "button" %>	
+
+	<% if current_user.present? and current_user == @gaff.user %>
+
+		<%= link_to "Edit", edit_gaff_path(@gaff), class: "button" %>
+		<%= link_to "Delete", gaff_path(@gaff), method: :delete,
+			class: "button", confirm: "Are you sure?" %>
+
+	<%end%>
 
 </div>
 
+<%end%>
