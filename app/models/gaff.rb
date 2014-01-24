@@ -1,5 +1,8 @@
 class Gaff < ActiveRecord::Base
 
+	#associations
+	belongs_to :user	
+
 	#this is info from the ruby geocoder.org site
 	geocoded_by :address
 	after_validation :geocode

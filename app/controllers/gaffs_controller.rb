@@ -1,4 +1,11 @@
 class GaffsController < ApplicationController
+  
+  #before quite a few of the actions below
+  #make sure you are signed in
+  before_action :make_sure_logged_in, except: [:index, :show]
+
+
+
   def index
   	@gaff = Gaff.all#near('London')
   end
@@ -8,13 +15,13 @@ class GaffsController < ApplicationController
   end
 
   def new
-  	@gaff = Gaff.new
+  	@gaff = current_user.gaffs.new
 
 
   end
   
   def create
-		@gaff = Gaff.new(gaff_params)
+		@gaff = current_user.gaffs.new(gaff_params)
 
 	if @gaff.save
 		flash[:success] = "You have just sorted a new gaff!"
@@ -29,14 +36,14 @@ class GaffsController < ApplicationController
 
   def edit 
   	# this is the form
-  	@gaff = Gaff.find(params[:id])
+  	@gaff = current_user.gaffs.find(params[:id])
   end
 
 	
 
 
     def update
-    	@gaff = Gaff.find(params[:id])
+    	@gaff = current_user.gaffs.find(params[:id])
 
     	if @gaff.update(gaff_params)
     		flash[:success] = "your room has been updated"
@@ -50,7 +57,7 @@ class GaffsController < ApplicationController
 
     def destroy
 
-    	@gaff = Gaff.find(params[:id])
+    	@gaff = current_user.gaffs.find(params[:id])
     	@gaff.destroy
     	flash[:success] = "your room has been updated"
     	redirect_to root_path
